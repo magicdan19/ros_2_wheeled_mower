@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+   <!-- lidar_link-->
+  <link name="lidar_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.01 -0.065 -0.06"/>
+      <geometry>
+        <mesh filename="file://$(find tondeuse)/urdf/mesh/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <mass value="0.01" />
+      <xacro:cylinder_inertia mass="1" r="0.035" l="0.1" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 -1.57" xyz="-0.01 -0.065 -0.06"/>
+      <geometry>
+        <mesh filename="file://$(find tondeuse)/urdf/mesh/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="orange" />
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 -1.57" xyz="-0.01 -0.065 -0.06"/>
+      <geometry>
+        <mesh filename="file://$(find tondeuse)/urdf/mesh/lidar.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="lidar_link_joint" type="fixed">
+    <origin rpy="0 0 0 " xyz="-0.185 0.1 0.3"/>
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  </robot>

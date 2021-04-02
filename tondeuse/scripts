@@ -1,0 +1,1 @@
+xacro ~/catkin_ws/src/tondeuse/urdf/tondeuse1.2.xacro > ~/catkin_ws/src/tondeuse/urdf/tondeuse1.2.urdf

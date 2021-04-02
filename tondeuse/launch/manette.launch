@@ -1,0 +1,15 @@
+<launch>
+
+   <rosparam param="ticks_meter">116</rosparam>
+
+   <!-- Permet de partir le noeud qui publie les données du joystick msg.joy-->
+   <node pkg="joy" type="joy_node" name="ps3_joy" output="screen" >
+	<param name="dev" type="string" value="/dev/input/js0" />
+	<param name="deadzone" value="0.12" />
+   </node>
+
+   <!-- Permet de partir le noeud qui converti les données du joy vers msg.TWIST-->
+   <node pkg="tondeuse" name="manette_twist_node" type="teleop_manette.py"/>
+
+  
+</launch>

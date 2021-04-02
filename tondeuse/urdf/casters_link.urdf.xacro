@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+   
+  <!-- caster right -->
+  <link name="caster_right_link">
+    <collision name="caster_right_collision">
+      <origin rpy="0 1.570796 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>0.1</slip1>
+            <slip2>0.1</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+
+    <visual name="caster_right_visual">
+      <origin rpy="0 1.570796 0" xyz="0 0 0"/>
+      <geometry>
+         <mesh filename="file://$(find tondeuse)/urdf/mesh/roulette.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="caster_right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.095 0.334 0.02" />
+    <child link="caster_right_link"/>
+    <parent link="base_link"/>
+    <axis xyz="1 0 0 "/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+    <!-- caster left -->
+  <link name="caster_left_link">
+    <collision name="caster_left_collision">
+      <origin rpy="0 1.570796 0" xyz="0 0 0"/>
+      <geometry>
+       <cylinder length="0.02" radius="0.02"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>0.1</slip1>
+            <slip2>0.1</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <visual name="caster_left_visual">
+      <origin rpy="0 1.570796 0" xyz="0 0 0"/>
+      <geometry>
+         <mesh filename="file://$(find tondeuse)/urdf/mesh/roulette.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="caster_left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.110 0.334 0.02" />
+    <child link="caster_left_link"/>
+    <parent link="base_link"/>
+    <axis xyz="1 0 0 "/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+</robot>

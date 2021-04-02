@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- imu_link --> 
+<link name="imu_link">
+    <visual name="caster_right_visual">
+      <origin rpy="0 1.570796 0" xyz="0 0 0"/>
+      <geometry>
+           <box size="0.01 0.025 0.003"/>
+      </geometry>
+    </visual>
+</link>
+
+<joint name="imu_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.3 0.12" />
+    <child link="imu_link"/>
+    <parent link="base_link"/>
+    <axis xyz="1 0 0 "/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+</robot>
+

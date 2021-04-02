@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot name="tondeuse2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <static>false</static>
+  <xacro:include filename="$(find tondeuse)/urdf/materials.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/macros.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/base_link.gazebo" />
+  <xacro:include filename="$(find tondeuse)/urdf/base_link.urdf.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/casters_link.gazebo" />
+  <xacro:include filename="$(find tondeuse)/urdf/casters_link.urdf.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/wheels_link.gazebo" />
+  <xacro:include filename="$(find tondeuse)/urdf/wheels_link.urdf.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/lidar_link.urdf.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/lidar_link.gazebo" />
+  <xacro:include filename="$(find tondeuse)/urdf/imu_link.urdf.xacro" />
+  <xacro:include filename="$(find tondeuse)/urdf/imu_link.gazebo" />
+
+  </robot>

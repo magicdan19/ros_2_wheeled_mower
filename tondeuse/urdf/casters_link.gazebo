@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <gazebo reference="caster_left_link">
+    <material>orange</material>
+  </gazebo>
+
+    <gazebo reference="caster_right_link">
+    <material>orange</material>
+  </gazebo>
+
+</robot>
